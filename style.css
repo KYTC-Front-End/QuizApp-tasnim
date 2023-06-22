@@ -1,0 +1,94 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+h1 {
+  color: #333;
+}
+h1, h2, h3 {
+  margin: 0;
+}
+#player-name{
+  width: 244px;
+  height: 35px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #5088c4;
+  color: #fff;
+  border: none;
+  /* cursor: pointer; */
+
+
+}
+button:hover {
+  background-color: #2b5685;
+}
+
+
+#leaderboard {
+  display: none;
+}
+
+#leaderboard h2 {
+  color: #333;
+}
+
+#leaderboard ul {
+  list-style-type: none;
+  padding: 0;
+}
+#options li {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  background-color: #f2f2f2;
+  text-align: left;
+  cursor: pointer;
+  color: black;
+}
+
+#options li:hover {
+  background-color: #ddd;
+}
+/* 
+#leaderboard li {
+  margin-bottom: 10px;
+} */
+
+#quiz-container {
+  display: none;
+}
+
+#quiz-container h2 {
+  color: #333;
+}
+
+#quiz-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#quiz-container li {
+  margin-bottom: 10px;
+}
+
+#next-btn {
+  display: none;
+}
+#scores li{
+  margin-bottom: 11px;
+}
