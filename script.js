@@ -20,10 +20,28 @@ const questions = [
     options: ["Jupiter", "Saturn", "Earth", "Mars"],
     answer: "Jupiter"
   },
+  {
+    question: "5What is the capital of France?",
+    options: ["Paris", "London", "Rome", "Berlin"],
+    answer: "Paris"
+  },
+  {
+    question: "6What is the largest planet in our solar system?",
+    options: ["Jupiter", "Saturn", "Earth", "Mars"],
+    answer: "Jupiter"
+  },
+  {
+    question: "7What is the capital of France?",
+    options: ["Paris", "London", "Rome", "Berlin"],
+    answer: "Paris"
+  },
+  {
+    question: "8What is the largest planet in our solar system?",
+    options: ["Jupiter", "Saturn", "Earth", "Mars"],
+    answer: "Jupiter"
+  },
  
- 
-  // Add more questions here...
-];
+ ];
 
 // Get DOM elements
 const app = document.getElementById("app");
@@ -43,6 +61,8 @@ let score = 0;
 // Load leaderboard data from localStorage
 let leaderboardData = localStorage.getItem("leaderboard");
 if (leaderboardData) {
+// This piece of code uses the JSON.parse() function to convert a 
+// JSON string into a JavaScript object.
   leaderboardData = JSON.parse(leaderboardData);
 } else {
   leaderboardData = [];
@@ -58,19 +78,10 @@ nextBtn.addEventListener("click", () => {
 });
 
 // Function to start the quiz
-// function startQuiz() {
-//   playerName = playerNameInput.value.trim();
-//   if (playerName) {
-//     startBtn.style.display = "none";
-//     playerNameInput.style.display = "none";
-//     leaderboard.style.display = "none";
-//     quizContainer.style.display = "block";
-//     showNextQuestion();
-//   }
-// }
-
-// Function to start the quiz
 function startQuiz() {
+  // `.trim()`:
+  //  هذه هي وظيفة JavaScript التي تستخدم لإزالة الفراغات الزائدة من بداية ونهاية النص.
+  //  يتم استخدامها هنا لإزالة أي فراغات زائدة تم إدخالها بالخطأ من قبل المستخدم.
   playerName = playerNameInput.value.trim();
   if (playerName) {
     startBtn.style.display = "none";
@@ -89,27 +100,13 @@ function startQuiz() {
 function shuffleQuestions() {
   for (let i = questions.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
+    // يتم استخدام هذا السطر لتبديل العناصر في المصفوفة. باستخدام تجديد القائمة
+    //  الفعلية من الأسئلة بأسلوب جديد، يتم تبديل العنصر الحالي في المصفوفة (questions[i]) مع العنصر المحدد عشوائيًا (questions[j]).
     [questions[i], questions[j]] = [questions[j], questions[i]];
   }
 }
 
 
-// Function to display the next question
-// function showNextQuestion() {
-//   if (currentQuestionIndex < questions.length) {
-//     resetQuiz();
-//     const question = questions[currentQuestionIndex];
-//     questionElement.textContent = question.question;
-//     question.options.forEach((option) => {
-//       const li = document.createElement("li");
-//       li.textContent = option;
-//       li.addEventListener("click", checkAnswer);
-//       optionsList.appendChild(li);
-//     });
-//   } else {
-//     endQuiz();
-//   }
-// }
 
 function showNextQuestion() {
   if (currentQuestionIndex < questions.length) {
@@ -147,18 +144,6 @@ function checkAnswer(event) {
 
   nextBtn.style.display = "block";
 }
-
-// Function to reset the quiz state
-// function resetQuiz() {
-//   while (optionsList.firstChild) {
-//     optionsList.removeChild(optionsList.firstChild);
-//   }
-
-//   nextBtn.style.display = "none";
-//   Array.from(optionsList.children).forEach((li) => {
-//     li.classList.remove("correct", "incorrect");
-//   });
-// }
 
 function resetQuiz() {
   while (optionsList.firstChild) {
